@@ -1,0 +1,33 @@
+:root {
+  /* Brand palette */
+  --brand-primary: #ab501d; /* deep orange/brown */
+  --brand-secondary: #657031; /* earthy green */
+  --brand-beige: #f3d9a7; /* warm beige */
+  --brand-on-primary: #ffffff;
+
+  /* Derived tokens */
+  --brand-primary-dark: color-mix(in oklab, var(--brand-primary) 85%, black);
+  --brand-secondary-70a: color-mix(in oklab, var(--brand-secondary) 70%, transparent);
+  --brand-secondary-10a: color-mix(in oklab, var(--brand-secondary) 10%, transparent);
+
+  /* Components */
+  --btn-primary-gradient: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--brand-primary) 92%, black),
+    color-mix(in oklab, var(--brand-primary) 74%, black)
+  );
+  --btn-secondary-ring: var(--brand-secondary-70a);
+  --btn-secondary-bg-hover: var(--brand-secondary-10a);
+
+  /* Brown-tinted secondary default */
+  --btn-brown-tint: color-mix(in oklab, var(--brand-primary) 16%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keep same brand identity in dark mode */
+    --btn-secondary-bg-hover: color-mix(in oklab, var(--brand-secondary) 16%, transparent);
+  }
+}
+
+
