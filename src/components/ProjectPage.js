@@ -68,9 +68,11 @@ export default function ProjectPage({
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {gallery.map((image, index) => (
                 <div key={index} className="overflow-hidden rounded-2xl shadow-sm">
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
+                    width={800}
+                    height={600}
                     className="h-64 w-full object-cover transition-transform hover:scale-105"
                   />
                 </div>
@@ -85,7 +87,7 @@ export default function ProjectPage({
         <section className="py-20 bg-white">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <blockquote className="text-2xl font-medium text-gray-900 sm:text-3xl">
-              "{testimonial.quote}"
+              &ldquo;{testimonial.quote}&rdquo;
             </blockquote>
             <div className="mt-6">
               <div className="font-semibold text-gray-900">{testimonial.author}</div>

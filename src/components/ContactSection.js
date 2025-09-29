@@ -12,7 +12,7 @@ export default function ContactSection() {
           <p className="text-sm font-semibold text-[color:var(--brand-primary)] uppercase tracking-wider mb-4">
             Contact
           </p>
-          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">Let's Talk</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">Let\'s Talk</h2>
           <p className="mt-2 text-gray-600">Set up home-watching for your Oakland Township property.</p>
         </div>
 
@@ -46,7 +46,7 @@ export default function ContactSection() {
           {mode === "book" ? (
             <div className="fade-switch-enter rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
               <div className="grid gap-6 md:grid-cols-2">
-                <img src="/images/contact-placeholder.jpg" alt="Book a call" className="h-48 w-full rounded-xl object-cover md:h-full" />
+                <Image src="/images/contact-placeholder.jpg" alt="Book a call" width={600} height={400} className="h-48 w-full rounded-xl object-cover md:h-full" />
                 <div className="flex flex-col justify-center">
               <h3 className="text-xl font-bold">Book a Call</h3>
               <p className="mt-2 text-gray-700">
@@ -66,7 +66,7 @@ export default function ContactSection() {
               className="fade-switch-enter rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
               onSubmit={(e) => {
                 e.preventDefault();
-                alert("Thanks! We’ll get back to you shortly.");
+                alert("Thanks! We\u2019ll get back to you shortly.");
               }}
             >
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

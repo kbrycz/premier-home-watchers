@@ -146,9 +146,11 @@ function FounderSection() {
           </div>
           <div className="order-1 md:order-2">
             <div className="overflow-hidden rounded-2xl shadow-lg">
-              <img
+              <Image
                 src="/images/secondary.jpg"
                 alt="Oakland Township residents Nick and Jenny"
+                width={800}
+                height={600}
                 className="h-96 w-full object-cover"
               />
             </div>
