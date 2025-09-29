@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
-  title: "About Chris Brycz | Bullfrog Builders",
-  description: "Learn about Chris Brycz, founder of Bullfrog Builders. From zookeeper to craftsman, bringing precision and passion to every build.",
+  title: "About Nick & Jenny | Premier Home Watchers",
+  description: "Meet Nick and Jenny, Oakland Township residents behind Premier Home Watchers — caring, reliable, and community‑focused.",
 };
 
 export default function AboutPage() {
@@ -15,51 +15,46 @@ export default function AboutPage() {
       
       <PageHero 
         title="About"
-        subtitle="The story behind Bullfrog Builders and our commitment to quality"
+        subtitle="Oakland Township residents, caring for our neighbors' homes while they’re away"
       />
 
-      {/* Chris's Story Section */}
+      {/* About split section */}
       <section className="w-full py-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-semibold text-[color:var(--brand-primary)] uppercase tracking-wider mb-4">
-              Founder's Story
-            </p>
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-              From Zookeeper to Craftsman
-            </h2>
-            <p className="mt-2 text-lg text-gray-600 max-w-3xl mx-auto">
-              A craftsman's journey: precision, care, and pride in every build.
-            </p>
-            <div className="mt-6" />
-            
-            {/* Centered image */}
-            <div className="mb-12 flex justify-center">
-              <div className="overflow-hidden rounded-2xl shadow-lg">
-                <Image
-                  src="/images/founder-placeholder.jpg"
-                  alt="Chris Brycz working on a construction project"
-                  width={600}
-                  height={400}
-                  className="h-80 w-full max-w-2xl object-cover"
-                />
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-10 items-center md:grid-cols-2">
+            {/* Text */}
+            <div className="order-2 md:order-1">
+              <p className="text-sm font-semibold text-[color:var(--brand-primary)] uppercase tracking-wider mb-3">Our Story</p>
+              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Meet Nick & Jenny</h2>
+              <p className="mt-4 text-lg text-gray-700 leading-relaxed">We’re a husband‑and‑wife team based in Oakland Township. We keep a small service radius so we can respond quickly and give your home the careful, neighbor‑level attention it deserves.</p>
+              <p className="mt-4 text-lg text-gray-700 leading-relaxed">Every visit includes an interior and exterior check and a time‑stamped photo report. If something needs attention, we’ll reach out right away and, with your approval, coordinate vendors or meet contractors on your behalf.</p>
+              <div className="mt-6 grid gap-2">
+                <div className="flex items-start gap-2 text-gray-800">
+                  <svg className="mt-1 h-4 w-4 text-[color:var(--brand-primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>Photo reports after every visit</span>
+                </div>
+                <div className="flex items-start gap-2 text-gray-800">
+                  <svg className="mt-1 h-4 w-4 text-[color:var(--brand-primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>Fast alerts and optional vendor coordination</span>
+                </div>
+                <div className="flex items-start gap-2 text-gray-800">
+                  <svg className="mt-1 h-4 w-4 text-[color:var(--brand-primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>Flexible membership or pay‑per‑visit pricing</span>
+                </div>
               </div>
             </div>
-          </div>
-          
-          <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
-            <div className="space-y-8">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Chris Brycz spent over 8 years at Binder Park Zoo, where he developed an incredible attention to detail and a deep appreciation for precision work. His days were filled with caring for animals, maintaining habitats, and ensuring every detail was perfect for the creatures under his care. This experience taught him that quality work isn't just about the end result—it's about the care and dedication you put into every single step of the process.
-              </p>
-              
-              <p className="text-lg text-gray-700 leading-relaxed">
-                When Chris became a new father, he faced a difficult but necessary decision. Despite his love for zookeeping and the animals he cared for, the financial realities of supporting a growing family meant he needed to pivot his career. Rather than see this as a setback, Chris embraced it as an opportunity to follow another passion that had been growing alongside his zoo work—building and craftsmanship. For years, he had been the go-to person among friends and family for DIY projects, home improvements, and custom builds around his own house.
-              </p>
-              
-              <p className="text-lg text-gray-700 leading-relaxed">
-                What started as weekend projects and favors for loved ones revealed Chris's natural talent for construction and design. Born into a family of skilled general contractors, the craftsmanship was already in his blood, but his unique background in animal care brought something special to his building approach. The same meticulous attention to detail that kept animals safe and comfortable now ensures that every chicken coop, shed, and foundation he builds exceeds expectations. Chris approaches each project with the heart of someone who truly cares about the outcome, whether he's building for a new client or a longtime friend.
-              </p>
+
+            {/* Image */}
+            <div className="order-1 md:order-2">
+              <div className="overflow-hidden rounded-3xl bg-gradient-to-b from-white/90 to-white/60 p-2 ring-1 ring-black/10 shadow-xl">
+                <Image
+                  src="/images/secondary.jpg"
+                  alt="Nick and Jenny of Premier Home Watchers"
+                  width={820}
+                  height={540}
+                  className="h-[420px] w-full object-cover rounded-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -72,12 +67,8 @@ export default function AboutPage() {
             <p className="text-sm font-semibold text-[color:var(--brand-primary)] uppercase tracking-wider mb-4">
               Our Mission
             </p>
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Building Relationships, Not Just Structures
-            </h2>
-            <p className="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">
-              At Bullfrog Builders, we believe that every project is an opportunity to build lasting relationships with our clients and community.
-            </p>
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Our Promise</h2>
+            <p className="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">Reliable, respectful, and responsive. We keep a small client list so we can be there when you need us.</p>
           </div>
           
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -89,10 +80,8 @@ export default function AboutPage() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Customer-First Approach</h3>
-              <p className="text-gray-600">
-                We prioritize building long-term relationships over quick profits. Every client becomes part of our extended family, and we're committed to earning your trust through honest communication and exceptional craftsmanship.
-              </p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Photo Reports After Every Visit</h3>
+              <p className="text-gray-600">Know what’s happening at home with clear photos and notes from each check.</p>
             </div>
 
             <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
@@ -103,10 +92,8 @@ export default function AboutPage() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Quality Craftsmanship</h3>
-              <p className="text-gray-600">
-                We believe that quality work speaks for itself. Every project, no matter the size, receives the same meticulous attention to detail and commitment to excellence that has become our signature.
-              </p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Emergency Alerts & Coordination</h3>
+              <p className="text-gray-600">If we spot an issue, you’ll hear from us right away, and we can coordinate help.</p>
             </div>
 
             <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm md:col-span-2 lg:col-span-1">
@@ -117,10 +104,8 @@ export default function AboutPage() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Community Connection</h3>
-              <p className="text-gray-600">
-                As a local Jackson, MI business, we're invested in our community's success. We source materials locally when possible and believe in supporting the neighbors and families that make our area special.
-              </p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Flexible Membership</h3>
+              <p className="text-gray-600">Weekly or biweekly plans with easy auto‑pay. Pause or adjust anytime.</p>
             </div>
           </div>
         </div>

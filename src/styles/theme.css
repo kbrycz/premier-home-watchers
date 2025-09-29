@@ -1,8 +1,8 @@
 :root {
   /* Brand palette */
-  --brand-primary: #ab501d; /* deep orange/brown */
-  --brand-secondary: #657031; /* earthy green */
-  --brand-beige: #f3d9a7; /* warm beige */
+  --brand-primary: #009432; /* fresh green */
+  --brand-secondary: #016a25; /* deeper green */
+  --brand-beige: #eaf7ec; /* light mint background */
   --brand-on-primary: #ffffff;
 
   /* Derived tokens */
@@ -13,8 +13,8 @@
   /* Components */
   --btn-primary-gradient: linear-gradient(
     135deg,
-    color-mix(in oklab, var(--brand-primary) 92%, black),
-    color-mix(in oklab, var(--brand-primary) 74%, black)
+    color-mix(in oklab, var(--brand-primary) 90%, black),
+    color-mix(in oklab, var(--brand-primary) 70%, black)
   );
   --btn-secondary-ring: var(--brand-secondary-70a);
   --btn-secondary-bg-hover: var(--brand-secondary-10a);

@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function ContactSection() {
-  const [mode, setMode] = useState("book"); // 'book' | 'email'
+  const [mode, setMode] = useState("email"); // 'book' | 'email'
 
   return (
     <section id="contact" className="relative w-full bg-white py-20 text-gray-900">
@@ -13,21 +13,12 @@ export default function ContactSection() {
             Contact
           </p>
           <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">Let's Talk</h2>
-          <p className="mt-2 text-gray-600">Choose how you'd like to reach us.</p>
+          <p className="mt-2 text-gray-600">Set up home-watching for your Oakland Township property.</p>
         </div>
 
         {/* Centered toggle under the heading */}
         <div className="mb-6 flex justify-center">
           <div className="inline-flex rounded-full bg-gray-100 p-1.5 text-sm">
-            <button
-              className={`rounded-full px-8 py-3 font-semibold transition ${
-                mode === "book" ? "text-white [background:var(--btn-primary-gradient)]" : "text-gray-700 hover:bg-gray-200"
-              }`}
-              onClick={() => setMode("book")}
-              aria-pressed={mode === "book"}
-            >
-              Book a Call
-            </button>
             <button
               className={`rounded-full px-8 py-3 font-semibold transition ${
                 mode === "email" ? "text-white [background:var(--btn-primary-gradient)]" : "text-gray-700 hover:bg-gray-200"
@@ -36,6 +27,15 @@ export default function ContactSection() {
               aria-pressed={mode === "email"}
             >
               Send an Email
+            </button>
+            <button
+              className={`rounded-full px-8 py-3 font-semibold transition ${
+                mode === "book" ? "text-white [background:var(--btn-primary-gradient)]" : "text-gray-700 hover:bg-gray-200"
+              }`}
+              onClick={() => setMode("book")}
+              aria-pressed={mode === "book"}
+            >
+              Book a Call
             </button>
           </div>
         </div>
@@ -48,10 +48,10 @@ export default function ContactSection() {
               <div className="grid gap-6 md:grid-cols-2">
                 <img src="/images/contact-placeholder.jpg" alt="Book a call" className="h-48 w-full rounded-xl object-cover md:h-full" />
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-xl font-bold">Book a Call</h3>
-                  <p className="mt-2 text-gray-700">
-                    For your convenience, book time on my calendar. We’ll call you at that time to discuss your project and schedule a site visit for a detailed estimate.
-                  </p>
+              <h3 className="text-xl font-bold">Book a Call</h3>
+              <p className="mt-2 text-gray-700">
+                Pick a time that works for you. We’ll review your needs, set up your checklist, and schedule the first visit.
+              </p>
                   <a
                     href="#book"
                     className="mt-5 inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black [background:var(--btn-primary-gradient)] hover:brightness-110 hover:shadow-lg"
@@ -88,7 +88,7 @@ export default function ContactSection() {
                 </div>
                 <div className="sm:col-span-2">
                   <label className="mb-1 block text-sm font-medium text-gray-700">Message</label>
-                  <textarea required name="message" rows={4} className="w-full resize-none rounded-md border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-black/20" />
+                  <textarea required name="message" rows={4} placeholder="Share travel dates, address (optional), and preferred visit frequency." className="w-full resize-none rounded-md border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-black/20" />
                 </div>
               </div>
               <div className="mt-4 flex justify-center">

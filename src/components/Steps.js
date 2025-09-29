@@ -1,11 +1,11 @@
 export default function Steps({ steps }) {
   const defaultSteps = [
-    { step: "1", title: "Quick Call", desc: "We discuss your project, goals, and timeline." },
-    { step: "2", title: "Site Visit & Measurements", desc: "Chris visits your property, measures, and talks through inspiration, layout, and options." },
-    { step: "3", title: "Design & Quote", desc: "You receive a clear quote with a proposed start date." },
-    { step: "4", title: "Schedule", desc: "We lock in the date and review simple prep steps." },
-    { step: "5", title: "Build & Install", desc: "Framing, secure hardware cloth, weather‑resistant finishes, healthy ventilation." },
-    { step: "6", title: "Final Touches & Walkthrough", desc: "Nesting boxes, perches, clean‑out access, and a final walkthrough." },
+    { step: "1", title: "Quick Call", desc: "We learn your travel dates, concerns, and property details." },
+    { step: "2", title: "Onboarding Checklist", desc: "You share access, alarm codes, key contacts, and any quirks to watch." },
+    { step: "3", title: "Set Your Plan", desc: "Choose visit frequency, add storm checks, and any custom tasks." },
+    { step: "4", title: "First Visit", desc: "We perform a full check and send a photo report the same day." },
+    { step: "5", title: "Alerts & Coordination", desc: "If we spot an issue, you’re notified immediately and we can coordinate vendors." },
+    { step: "6", title: "Ongoing Care", desc: "Simple monthly membership with auto‑pay; adjust or pause anytime." },
   ];
 
   const stepsToRender = steps && steps.length ? steps : defaultSteps;

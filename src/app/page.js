@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BellIcon, CalendarIcon, FileTextIcon, GlobeIcon } from "@radix-ui/react-icons";
 import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -24,12 +25,12 @@ function Hero() {
       <main className="relative z-10 h-screen w-full">
             <div className="mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-white">
               {/* Animated logo that transitions from navbar */}
-              <AnimatedLogo className="fade-in-up w-48 h-48 sm:w-[260px] sm:h-[260px]" width={260} height={260} />
+              <AnimatedLogo className="fade-in-up w-44 h-44 sm:w-48 sm:h-48" width={180} height={180} />
           <h1 className="fade-in-up text-4xl font-extrabold tracking-tight leading-tight sm:text-5xl md:text-6xl sm:leading-tight md:leading-tight">
-            Leap Into Quality Construction.
+            Your Trusted Home Watchers in Oakland Township
           </h1>
           <p className="fade-in-up delay-150 mt-6 max-w-3xl text-base leading-relaxed sm:text-lg md:text-xl text-white/90 sm:leading-relaxed md:leading-relaxed">
-            Proudly serving the Jackson, Michigan area with modern contracting solutions.
+            Husband-and-wife team providing reliable home-watching while you’re away. Photo reports after every visit. Emergency alerts if something’s wrong.
           </p>
           <div className="fade-in-up delay-300 mt-10 flex flex-col gap-4 w-full max-w-sm sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
                 <a
@@ -55,64 +56,41 @@ function Hero() {
   );
 }
 
-function ServiceCard({ title, description, href }) {
+function ServiceBox({ icon, title, description }) {
   return (
-    <Link href={href} className="block group">
-      <div
-        className={cn(
-          "relative h-40 overflow-hidden rounded-2xl border bg-white text-left shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
-          "border-black/10 group-hover:border-[color:var(--brand-primary)]/20"
-        )}
-      >
-        <div className="flex h-full flex-col justify-center p-6">
-          <h3 className="text-xl font-bold text-gray-900 group-hover:text-[color:var(--brand-primary)] transition-colors">
-            {title}
-          </h3>
-          <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-            {description}
-          </p>
-        </div>
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <svg className="h-5 w-5 text-[color:var(--brand-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
+    <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg">
+      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full [background:var(--btn-primary-gradient)] text-white">
+        {icon}
       </div>
-    </Link>
+      <h3 className="text-xl font-bold text-gray-900">{title}</h3>
+      {description && (
+        <p className="mt-2 text-gray-700 leading-relaxed">{description}</p>
+      )}
+    </div>
   );
 }
 
 function ProjectsSection() {
   const services = [
-    { 
-      title: "Chicken Coops", 
-      description: "Custom coops designed for your flock's comfort and safety with weather-resistant materials.",
-      href: "/chicken-coops" 
+    {
+      icon: <FileTextIcon className="h-5 w-5" />,
+      title: "Photo Reports",
+      description: "Detailed, time‑stamped photos and clear notes after every visit. We check the interior (leaks, HVAC, appliances, doors/windows) and the exterior (perimeter, packages, visible damage) and call out issues with next‑step recommendations.",
     },
-    { 
-      title: "Concrete Foundations", 
-      description: "Durable, level foundations built to last with proper drainage and code compliance.",
-      href: "/concrete-foundations" 
+    {
+      icon: <BellIcon className="h-5 w-5" />,
+      title: "Emergency Alerts & Coordination",
+      description: "Immediate text or call if we detect a problem. With your approval, we coordinate with your preferred vendors (or ours), meet contractors, and provide access so issues get handled fast.",
     },
-    { 
-      title: "Pole Barns", 
-      description: "Versatile agricultural and storage buildings designed for your specific needs and budget.",
-      href: "/pole-barns" 
+    {
+      icon: <CalendarIcon className="h-5 w-5" />,
+      title: "Flexible Plans",
+      description: "Pay‑per‑visit or discounted membership with weekly, biweekly, or custom schedules. Add on‑demand storm checks anytime and pause or adjust whenever you need.",
     },
-    { 
-      title: "Custom Sheds", 
-      description: "Beautiful storage solutions that complement your property while maximizing functionality.",
-      href: "/sheds" 
-    },
-    { 
-      title: "Flooring", 
-      description: "Professional flooring installation and interior improvements with meticulous attention to detail.",
-      href: "/flooring" 
-    },
-    { 
-      title: "General Contracting", 
-      description: "Comprehensive building services from planning to completion with quality craftsmanship.",
-      href: "/general-contracting" 
+    {
+      icon: <GlobeIcon className="h-5 w-5" />,
+      title: "Local & Reliable",
+      description: "We’re Oakland Township residents with a small service radius for quick response and consistent care—like having trusted neighbors on call. Respectful, discreet, and detail‑oriented.",
     },
   ];
 
@@ -121,18 +99,14 @@ function ProjectsSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12 text-center">
           <p className="text-sm font-semibold text-[color:var(--brand-primary)] uppercase tracking-wider mb-4">
-            Our Services
+            What We Do
           </p>
-          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
-            What We Build
-          </h2>
-          <p className="mt-3 text-lg text-gray-600">
-            From concept to completion, quality craftsmanship across projects.
-          </p>
+          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">Home Watching Services</h2>
+          <p className="mt-3 text-lg text-gray-600">Like having trusted neighbors on call while you’re away.</p>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.title} {...service} />
+        <div className="grid gap-6 md:grid-cols-2">
+          {services.map((s) => (
+            <ServiceBox key={s.title} {...s} />
           ))}
         </div>
       </div>
@@ -149,30 +123,32 @@ function FounderSection() {
             Why Us
           </p>
           <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
-            Meet the Founder
+            Meet Nick & Jenny
           </h2>
           <p className="mt-3 text-lg text-gray-600">
-            The passion and expertise behind every Bullfrog Builders project.
+            Caring, reliable, and community‑focused. Small service radius so we treat your home like our own.
           </p>
         </div>
         <div className="grid gap-10 items-center md:grid-cols-2">
           <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Chris Brycz</h3>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              With over 8 years at Binder Park Zoo and a family background in construction, Chris brings a unique blend of animal care precision and craftsmanship expertise to every build. As a new father who transitioned from zookeeping to follow his passion for building, he approaches each project with the same dedication and attention to detail that made him successful in animal care.
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              We’re Nick and Jenny—Oakland Township residents who run a small, family‑owned home‑watching service. We keep a tight service radius so we can respond quickly and treat your home like our own.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-5">
+              Each visit includes an interior and exterior check with time‑stamped photo reports. If something needs attention, we alert you right away and can coordinate vendors. Flexible plans or pay‑per‑visit—always transparent pricing.
             </p>
             <Link
               href="/about"
               className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black [background:var(--btn-primary-gradient)] hover:brightness-110 hover:shadow-lg"
             >
-              Learn More About Him
+              About Nick & Jenny
             </Link>
           </div>
           <div className="order-1 md:order-2">
             <div className="overflow-hidden rounded-2xl shadow-lg">
               <img
-                src="/images/founder-placeholder.jpg"
-                alt="Chris Brycz, Founder of Bullfrog Builders"
+                src="/images/secondary.jpg"
+                alt="Oakland Township residents Nick and Jenny"
                 className="h-96 w-full object-cover"
               />
             </div>
@@ -191,12 +167,8 @@ function PricingSection() {
           <p className="text-sm font-semibold text-[color:var(--brand-primary)] uppercase tracking-wider mb-4">
             Pricing
           </p>
-          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
-            Fair & Transparent Pricing
-          </h2>
-          <p className="mt-3 text-lg text-gray-600">
-            Quality craftsmanship at unbeatable prices with no hidden fees.
-          </p>
+          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">Pricing & Membership</h2>
+          <p className="mt-3 text-lg text-gray-600">Flexible plans or pay‑per‑visit — always transparent.</p>
         </div>
         
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -208,10 +180,8 @@ function PricingSection() {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900">Material + Labor</h3>
-            <p className="mt-2 text-gray-600">
-              Transparent estimates based on actual material costs plus fair labor rates. No markup on materials, no surprises.
-            </p>
+            <h3 className="text-xl font-bold text-gray-900">Pay Per Visit</h3>
+            <p className="mt-2 text-gray-600">Only pay when we visit. Choose weekly, biweekly, or ad‑hoc storm checks.</p>
           </div>
 
           <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
@@ -222,10 +192,8 @@ function PricingSection() {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900">Lowest Prices Guaranteed</h3>
-            <p className="mt-2 text-gray-600">
-              We're confident we offer the best value in Jackson, MI. Find a lower quote? We'll match it and beat it by 5%.
-            </p>
+            <h3 className="text-xl font-bold text-gray-900">Flexible Membership</h3>
+            <p className="mt-2 text-gray-600">Discounted recurring visits with easy auto‑pay. Pause or adjust anytime.</p>
           </div>
 
           <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm md:col-span-2 lg:col-span-1">
@@ -236,10 +204,8 @@ function PricingSection() {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900">Customer First</h3>
-            <p className="mt-2 text-gray-600">
-              We want to do right by you and earn your trust as a returning customer. Fair pricing, quality work, honest service.
-            </p>
+            <h3 className="text-xl font-bold text-gray-900">Transparent & Fair</h3>
+            <p className="mt-2 text-gray-600">Clear per‑visit rates and add‑ons up front. No hidden fees.</p>
           </div>
         </div>
       </div>

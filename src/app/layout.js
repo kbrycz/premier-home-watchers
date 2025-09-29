@@ -4,12 +4,12 @@ import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
 
 export const metadata = {
-  title: "Bullfrog Builders — Modern Contracting in Jackson, MI",
-  description: "Building dreams and crafting quality. Bullfrog Builders offers modern contracting solutions in Jackson, Michigan.",
+  title: "Premier Home Watchers — Oakland Township Home Watching",
+  description: "Husband-and-wife team providing reliable home-watching services in Oakland Township and nearby areas. Photo reports after every visit, emergency alerts, and flexible plans.",
   icons: {
     icon: "/favicon.ico",
   },
-  metadataBase: new URL("https://bullfrogbuilders.com"),
+  metadataBase: new URL("https://premierhomewatchers.com"),
 };
 
 export default function RootLayout({ children }) {
