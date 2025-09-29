@@ -83,8 +83,10 @@ export default function ContactSection() {
                   <input required type="email" name="email" autoComplete="email" inputMode="email" className="w-full rounded-md border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-black/20" />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-700">Phone</label>
-                  <input required type="tel" name="phone" autoComplete="tel" inputMode="tel" pattern="^[+0-9\-()\s]{7,}$" placeholder="(555) 123-4567" className="w-full rounded-md border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-black/20" />
+                  <label className="mb-1 block text-sm font-medium text-gray-700">
+                    Phone <span className="font-normal text-gray-500">(optional)</span>
+                  </label>
+                  <input type="tel" name="phone" autoComplete="tel" inputMode="tel" pattern="^[+0-9\-()\s]{7,}$" placeholder="(555) 123-4567" className="w-full rounded-md border border-black/10 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-black/20" />
                 </div>
                 <div className="sm:col-span-2">
                   <label className="mb-1 block text-sm font-medium text-gray-700">Message</label>
