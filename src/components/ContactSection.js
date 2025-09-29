@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ContactSection() {
   const [mode, setMode] = useState("email"); // 'book' | 'email'
@@ -12,7 +13,7 @@ export default function ContactSection() {
           <p className="text-sm font-semibold text-[color:var(--brand-primary)] uppercase tracking-wider mb-4">
             Contact
           </p>
-          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">Let\'s Talk</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">Let&amp;apos;s Talk</h2>
           <p className="mt-2 text-gray-600">Set up home-watching for your Oakland Township property.</p>
         </div>
 
