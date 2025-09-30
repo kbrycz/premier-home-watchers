@@ -1,38 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Premier Home Watchers
 
-## Getting Started
+A small, fast marketing website for a local home‑watching service. Built with Next.js (App Router) and deployed on Vercel. The site is fully static, SEO‑optimized, and uses modern CSS + Tailwind utilities for a clean, lightweight experience.
 
-First, run the development server:
+- **Live site**: `https://premierhomewatchers.com` (or the Vercel preview domain)
+- **Framework**: Next.js 15 (App Router)
+- **UI/Styling**: Tailwind CSS 4, custom CSS variables in `src/styles/theme.css`
+- **Animation/Icons**: Framer Motion, Radix Icons
+- **Fonts**: Geist Sans/Mono
 
+## Features
+- **Home page** (`/`) with hero, services, founder, pricing, and contact sections
+- **About page** (`/about`)
+- **Ad landing page** (`/ad/facebook`) with concise selling points
+- **SEO ready**: metadata, Open Graph, `robots.js`, and `sitemap.js`
+- **Fast**: statically generated with the Next.js App Router
+
+## Requirements
+- Node.js 18.18+ (or 20+ recommended)
+- npm 9+ (or a compatible package manager)
+
+## Getting Started (Local Development)
+1. Install dependencies:
+```bash
+npm install
+```
+2. Start the dev server (Turbopack):
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+3. Visit `http://localhost:3000`.
+
+Edits to the main landing page live in `src/app/page.js`. Global layout and metadata live in `src/app/layout.js`.
+
+## Scripts
+- `npm run dev` — Start local dev server with Turbopack
+- `npm run build` — Create a production build
+- `npm start` — Run the production server locally after build
+- `npm run lint` — Run ESLint
+
+## Production Build + Run Locally
+```bash
+npm run build
+npm start
+```
+This serves the built site at `http://localhost:3000`.
+
+## Deployment (Vercel)
+This project is designed for a zero‑config Vercel deployment.
+
+Recommended settings:
+- **Framework Preset**: Next.js
+- **Root Directory**: repository root (do not point to `src/`)
+- **Install Command**: `npm ci` (or leave default)
+- **Build Command**: `next build` (default; do not override with custom output)
+- **Output Directory**: leave empty so Vercel auto‑detects Next.js (do NOT set `out/`)
+
+If you see a 404 on a deployment despite a successful build:
+- Ensure the **Root Directory** is the repo root and the **Output Directory** is blank
+- Ensure the **Framework Preset** is set to Next.js
+- Re‑deploy and then check the build log’s Route table; you should see `/`, `/about`, `/ad/facebook`
+
+## SEO and Metadata
+- Global metadata and Open Graph are defined in `src/app/layout.js`
+- Robots and sitemap are in `src/app/robots.js` and `src/app/sitemap.js`
+- Canonical URL and social image are already configured
+
+## Project Structure (high level)
+```
+src/
+  app/
+    page.js            # Home page
+    about/page.js      # About page
+    ad/facebook/page.js# Ad landing page
+    layout.js          # Root layout + global metadata
+    globals.css        # Base styles (includes Tailwind 4 utilities)
+  components/
+    Navbar.js, Footer.js, ContactSection.js, AnimatedLogo.js, etc.
+  lib/
+    utils.js           # Small utilities (e.g., className helper)
+  styles/
+    theme.css          # Design tokens (CSS variables)
+public/
+  images/              # Static images used by the site
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Conventions
+- **Path alias**: Use `@/*` for imports from `src/*` (configured in `jsconfig.json`)
+- **Apostrophes in JSX**: ESLint (`react/no-unescaped-entities`) requires escaping apostrophes in text nodes. Use `Let&apos;s` instead of `Let's` in JSX text to avoid build failures.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Troubleshooting
+- **Vercel 404 after a successful build**: Check that the project’s Root Directory is the repo root, the Framework preset is Next.js, and the Output Directory is blank (auto). Re‑deploy.
+- **Styles not updating**: Hard refresh or clear cache; the CDN may have cached an old asset.
+- **ESLint error about apostrophes**: Replace `'` with `&apos;` inside JSX text nodes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Premier Home Watchers
-# premier-home-watchers
+## License
+Private project. All rights reserved.
